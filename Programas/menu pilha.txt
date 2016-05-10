@@ -1,0 +1,61 @@
+/*int main(){
+    system("color f0");
+    configtela();
+    SetConsoleTitle("Estrutura de Dados - Pilha - Breno");
+    setlocale(LC_ALL,"Portuguese");
+
+    tp_item e;
+    tp_item valor = 0;
+    tp_pilha pilha1;         ///cria a pilha1
+    tp_pilha pilha2;
+
+    inicia_pilha(&pilha1);   ///inicia a pilha
+    inicia_pilha(&pilha2);
+
+    char op;
+    do{
+        menu_pilha();
+
+        printf("\n\nDigite a opção desejada: ");
+        op=getche();
+        printf("\n");
+        switch(op)
+        {
+            case '1':
+                printf("\nDigite um valor Inteiro para inserir na Pilha:\t");
+                scanf("%d",&valor);
+                empilha(&pilha1, valor);
+                getch();
+                break;
+            case '2':
+                desempilha(&pilha1,&e);
+                getch();
+                break;
+            case '3':
+                verifica_topo(&pilha1,&e);
+                getch();
+                break;
+            case '4':
+                retira_impar(&pilha1);
+                getch();
+                break;
+            case '5':
+                compara_pilha(&pilha1,&pilha2);
+                getch();
+                break;
+            case '6':
+                junta_pilha(&pilha1,&pilha2);
+                getch();
+                break;
+            case '0':
+                exit(0);
+                break;
+            default:
+                printf("\nOpção Inexistente!");
+                getch();
+                break;
+        }
+    }while(op != 'x');
+
+    return 0;
+}*/

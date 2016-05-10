@@ -1,0 +1,197 @@
+# depslib dependency file v1.0
+1457532358 source:j:\projetoed\main.c
+	"cabecalho.h"
+
+1457533465 j:\projetoed\cabecalho.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<locale.h>
+	<time.h>
+	<stdbool.h>
+	<windows.h>
+
+1457533448 source:j:\projetoed\menu.c
+	"cabecalho.h"
+
+1457533448 source:j:\projetoed\pilha.c
+	"cabecalho.h"
+
+1457071753 source:j:\projetoed\menu_pilha.c
+	"cabecalho.h"
+
+1457532843 source:j:\projetoed\exceptions.c
+	"cabecalho.h"
+
+1457532843 source:f:\private\unijorge\ed\projetoed\exceptions.c
+	"cabecalho.h"
+
+1457655913 f:\private\unijorge\ed\projetoed\cabecalho.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<locale.h>
+	<time.h>
+	<stdbool.h>
+	<windows.h>
+
+1457532358 source:f:\private\unijorge\ed\projetoed\main.c
+	"cabecalho.h"
+
+1457533448 source:f:\private\unijorge\ed\projetoed\menu.c
+	"cabecalho.h"
+
+1457655955 source:f:\private\unijorge\ed\projetoed\pilha.c
+	"cabecalho.h"
+
+1457532843 source:d:\private\unijorge\ed\projetoed\exceptions.c
+	"cabecalho.h"
+
+1459044680 d:\private\unijorge\ed\projetoed\cabecalho.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<locale.h>
+	<time.h>
+	<stdbool.h>
+	<windows.h>
+
+1459046840 source:d:\private\unijorge\ed\projetoed\pilha.c
+	"cabecalho.h"
+
+1459044016 source:d:\private\unijorge\ed\projetoed\main.c
+	"cabecalho.h"
+
+1459044046 source:d:\private\unijorge\ed\projetoed\menu.c
+	"cabecalho.h"
+
+1459047662 source:d:\private\unijorge\ed\projetoed\fila.c
+	"cabecalho.h"
+
+1460648309 source:d:\unijorge\ed\projetoed\exceptions.c
+	"cabecalho.h"
+
+1460647799 d:\unijorge\ed\projetoed\cabecalho.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<locale.h>
+	<time.h>
+	<stdbool.h>
+	<windows.h>
+
+1460648368 source:d:\unijorge\ed\projetoed\fila.c
+	"cabecalho.h"
+
+1459044016 source:d:\unijorge\ed\projetoed\main.c
+	"cabecalho.h"
+
+1459044046 source:d:\unijorge\ed\projetoed\menu.c
+	"cabecalho.h"
+
+1460647737 source:d:\unijorge\ed\projetoed\pilha.c
+	"cabecalho.h"
+
+1457532843 source:f:\unijorge\ed\projetoed\exceptions.c
+	"cabecalho.h"
+
+1459468371 f:\unijorge\ed\projetoed\cabecalho.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<locale.h>
+	<time.h>
+	<stdbool.h>
+	<windows.h>
+
+1459469894 source:f:\unijorge\ed\projetoed\fila.c
+	"cabecalho.h"
+
+1459044016 source:f:\unijorge\ed\projetoed\main.c
+	"cabecalho.h"
+
+1459044046 source:f:\unijorge\ed\projetoed\menu.c
+	"cabecalho.h"
+
+1459469159 source:f:\unijorge\ed\projetoed\pilha.c
+	"cabecalho.h"
+
+1459469989 source:f:\unijorge\ed\projetoed\menuprincipal.c
+	"cabecalho.h"
+
+1459470089 source:f:\unijorge\ed\projetoed\menupilha.c
+	"cabecalho.h"
+
+1459471008 source:f:\unijorge\ed\projetoed\atividade.c
+	"cabecalho.h"
+
+1459470038 source:f:\unijorge\ed\projetoed\menufila.c
+	"cabecalho.h"
+
+1459471121 source:f:\unijorge\ed\projetoed\menuatividade.c
+	"cabecalho.h"
+
+1460647661 source:d:\unijorge\ed\projetoed\atividade.c
+	"cabecalho.h"
+
+1459471121 source:d:\unijorge\ed\projetoed\menuatividade.c
+	"cabecalho.h"
+
+1460647799 source:d:\unijorge\ed\projetoed\menufila.c
+	"cabecalho.h"
+
+1460647799 source:d:\unijorge\ed\projetoed\menupilha.c
+	"cabecalho.h"
+
+1460647810 source:d:\unijorge\ed\projetoed\menuprincipal.c
+	"cabecalho.h"
+
+1460647176 source:d:\unijorge\ed\projetoed\pilha2.c
+	"cabecalho.h"
+
+1460648309 source:i:\private\unijorge\ed\projetoed\exceptions.c
+	"cabecalho.h"
+
+1462458699 i:\private\unijorge\ed\projetoed\cabecalho.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<locale.h>
+	<time.h>
+	<stdbool.h>
+	<windows.h>
+	<ctype.h>
+
+1462457303 source:i:\private\unijorge\ed\projetoed\fila.c
+	"cabecalho.h"
+
+1459044016 source:i:\private\unijorge\ed\projetoed\main.c
+	"cabecalho.h"
+
+1459471121 source:i:\private\unijorge\ed\projetoed\menuatividade.c
+	"cabecalho.h"
+
+1460647799 source:i:\private\unijorge\ed\projetoed\menufila.c
+	"cabecalho.h"
+
+1460647799 source:i:\private\unijorge\ed\projetoed\menupilha.c
+	"cabecalho.h"
+
+1460647810 source:i:\private\unijorge\ed\projetoed\menuprincipal.c
+	"cabecalho.h"
+
+1460647176 source:i:\private\unijorge\ed\projetoed\pilha2.c
+	"cabecalho.h"
+
+1462457863 source:i:\private\unijorge\ed\projetoed\atividade.c
+	"cabecalho.h"
+
+1462457312 source:i:\private\unijorge\ed\projetoed\pilha.c
+	"cabecalho.h"
+

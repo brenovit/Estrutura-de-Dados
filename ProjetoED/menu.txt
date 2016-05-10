@@ -1,0 +1,44 @@
+void menu_pilha(){
+    /*system("cls");
+    printf("\n\t\t\t_________________________________________________");
+    printf("\n\t\t\t|                  MENU PILHA                   |");
+    printf("\n\t\t\t|_______________________________________________|");
+    printf("\n\t\t\t|                                               |");
+    printf("\n\t\t\t| 1 - Empilhar                                  |");
+    printf("\n\t\t\t| 2 - Desempilhar                               |");
+    printf("\n\t\t\t| 3 - Ver Pilha                                 |");
+    printf("\n\t\t\t| 0 - Sair                                      |");
+    printf("\n\t\t\t|_______________________________________________|");
+    char op;
+    do{
+        menu_pilha();
+
+        printf("\n\nDigite a opção desejada: ");
+        op=getche();
+        printf("\n");
+        switch(op)
+        {
+                case '1':
+                    printf("\nDigite um valor Inteiro para inserir na Pilha:\t");
+                    scanf("%d",&valor);
+                    insere_item(&pilha, valor);
+                    getch();
+                    break;
+                case '2':
+                    remove_item(&pilha,&e);
+                    getch();
+                    break;
+                case '3':
+                    verifica_topo(&pilha,&e);
+                    getch();
+                    break;
+                case '0':
+                    menu();
+                    break;
+                default:
+                    printf("\nOpção Inexistente!");
+                    getch();
+                    break;
+        }
+    }while(op != '0');*/
+}
