@@ -8,27 +8,27 @@ typedef struct tp_no{                                   ///estrutura da lista,
     struct tp_no *prox;                                 ///este ponteiro estara apontando para uma estrutura semelhante a esta
 }tplista;                                               ///nome da estrutura
 
-tplista* inicializa();                                   ///inicializar a lista
-int lista_vazia(tplista *lista);                         ///checar se a lista ta vazia
-tplista* aloca();                                        ///aloca memoria do tamanho de uma lista
+tplista* inicializa();                                  ///inicializar a lista
+int lista_vazia(tplista *lista);                        ///checar se a lista ta vazia
+tplista* aloca();                                       ///aloca memoria do tamanho de uma lista
 
-int inserir_inicio(tplista **lista, tp_item e);          ///função de inserir nós no inicio da lista
-int inserir_oredenado(tplista **lista, tp_item e);       ///função de inserir nós de forma ordenada na lista
-int inserir_final(tplista **lista, tp_item e);           ///função de inserir nós no final da lista
+int inserir_inicio(tplista **lista, tp_item e);         ///função de inserir nós no inicio da lista
+int inserir_oredenado(tplista **lista, tp_item e);      ///função de inserir nós de forma ordenada na lista
+int inserir_final(tplista **lista, tp_item e);          ///função de inserir nós no final da lista
 
-int remover_inicio(tplista **lista, tp_item *e);         ///função para remover o primeiro nó da lista
-int remover_meio(tplista **lista, tp_item *e);           ///função para remover um nó com um certo valor
-int remover_final(tplista **lista, tp_item *e);          ///função para remover o ultimo nó da lista
+int remover_inicio(tplista **lista, tp_item *e);        ///função para remover o primeiro nó da lista
+int remover_meio(tplista **lista, tp_item *e);          ///função para remover um nó com um certo valor
+int remover_final(tplista **lista, tp_item *e);         ///função para remover o ultimo nó da lista
 
-void listagem(tplista *lista);                           ///esta função ira listar todos os elementos contidos na lsita
-void libera_lista(tplista **lista);                      ///esta função ira limpar toda lista(liberar o espaço em memoria)
-int tamanho_lista(tplista **lista);                      ///esta função ira retornar o tamanho da lista
+void listagem(tplista *lista);                          ///esta função ira listar todos os elementos contidos na lsita
+void libera_lista(tplista **lista);                     ///esta função ira limpar toda lista(liberar o espaço em memoria)
+int tamanho_lista(tplista **lista);                     ///esta função ira retornar o tamanho da lista
 
-void manipular_lista_inicio();                           ///esta função vai manipular a lista pelo inicio
-void manipular_lista_meio();                             ///esta função vai manipular a lista pelo meio ou de forma ordenada
-void manipular_lista_final();                            ///esta função vai manipular a lista pelo final
+void manipular_lista_inicio();                          ///esta função vai manipular a lista pelo inicio
+void manipular_lista_meio();                            ///esta função vai manipular a lista pelo meio ou de forma ordenada
+void manipular_lista_final();                           ///esta função vai manipular a lista pelo final
 
-int buscar_pelo_elemento(tplista **lista, tp_item *e);   ///esta função ira buscar por um nó na lista de ocordo com o valor que ele tiver
+int buscar_pelo_elemento(tplista **lista, tp_item e);   ///esta função ira buscar por um nó na lista de ocordo com o valor que ele tiver
 int buscar_pela_posicaoo(tplista **lista, int pos, tp_item *e);///esta função ira buscar por um nó na lista de ocordo com a posição dele na lista
 
 void main(){
@@ -45,7 +45,7 @@ void main(){
 
 void manipular_lista_inicio(){
     tplista *lista;                                     ///criação de um ponteiro da lista
-    tp_item e;
+    tp_item e = 10;
     lista = inicializa();                               ///inicializando a lista(seu valor será nulo)
 
     ///===== - Inicio - =============================== - Teste de Inserir no Inicio da Lista
@@ -64,14 +64,21 @@ void manipular_lista_inicio(){
     listagem(lista);                                    ///mostra os valores presentes nos nós da lista
 
     if(buscar_pela_posicaoo(&lista, 2, &e))
-        printf("\nO valor do no na segunda posição é: %d \n",e);
+        printf("\nO valor do nó na Segunda posição é: %d \n",e);
 
-    if(remover_inicio(&lista,&e))
+    e = 20;
+
+    if(buscar_pelo_elemento(&lista, e))
+        printf("\nO elemento [%d] foi encontrado na lista\n",e);
+    else
+        printf("\nNão foi encontrado o elemento [%d]\n",e);
+
+    /*if(remover_inicio(&lista,&e))
         printf("\nElemento [%d] removido com Sucesso do Inicio da Lista\n\n",e);
 
     printf("\nQuantidade de nós presente na lista: %d\n\n",tamanho_lista(&lista));
 
-    listagem(lista);
+    listagem(lista);*/
     ///===== - Fim - ================================== - Teste de Inserir no Inicio da Lista
 
     libera_lista(&lista);                               ///limpa a lista
@@ -165,7 +172,7 @@ void listagem(tplista *lista){                          ///esta função lista tod
 }
 
 int tamanho_lista(tplista **lista){                     ///esta função ira retornar o tamanho da lista, percorrendo cada elemento
-    if(lista_vazia(*lista))                              ///verifica se a lista esta vazia
+    if(lista_vazia(*lista))                             ///verifica se a lista esta vazia
         return 0;
     int cont = 0;                                       ///cria-se um contador
     tplista *no = *lista;                               ///cria-se um nó, que recebe o primeiro nó da lista passado como parametro
@@ -178,7 +185,7 @@ int tamanho_lista(tplista **lista){                     ///esta função ira retor
 
 void libera_lista(tplista **lista){                     ///esta função vai limpar toda a lista
     tplista *no;                                        ///cria-se uma nova lista
-    if(!lista_vazia(*lista)){                            ///verifica se a lista não é nula
+    if(!lista_vazia(*lista)){                           ///verifica se a lista não é nula
         while((*lista) != NULL){                        ///enquanto existir nó dentro da lista
             no = *lista;                                ///o novo nó vai receber o primeiro nó da lista
             *lista = (*lista)->prox;                    ///esta lista vai avançar para o nó que ela aponta
@@ -215,7 +222,7 @@ int inserir_oredenado (tplista **lista, tp_item e){     ///esta função ira inser
         return 0;
 
     novo_no->info = e;                                  ///passa para a info desse nó o valor passado como parametro
-    if(lista_vazia(*lista)){                             ///checa se a lista esta vazia, para inserir no primeiro elemento
+    if(lista_vazia(*lista)){                            ///checa se a lista esta vazia, para inserir no primeiro elemento
         novo_no->prox = (*lista);                       ///o novo nó vai receber a lista
         *lista = novo_no;                               ///a lista recebe o novo nó
         return 1;                                       ///sai da inserção
@@ -239,104 +246,116 @@ int inserir_oredenado (tplista **lista, tp_item e){     ///esta função ira inser
 }
 
 int inserir_final(tplista **lista, tp_item e){          ///esta função vair inserir na lista '**lista' o elemento 'e'
-    tplista *novo_no;                                    ///cria um ponteiro que vai receber o end de memoria alocads
-    tplista *aux;                                        ///estes ponteiros vão navegar todos os nós da lista, apontado para o nó atual e o nó que ele aponta
-    novo_no = aloca();                                   ///o ponteiro esta armazenando o end de memoria alocada
+    tplista *novo_no;                                   ///cria um ponteiro que vai receber o end de memoria alocads
+    tplista *aux;                                       ///estes ponteiros vão navegar todos os nós da lista, apontado para o nó atual e o nó que ele aponta
+    novo_no = aloca();                                  ///o ponteiro esta armazenando o end de memoria alocada
 
-    if(novo_no == NULL)                                  ///verifica se o ponteiro recebeu null, traduzindo, não foi possivel alocar memoria, (o malloc vai informar isso)
-        return 0;                                        ///não conseguiu alocar memoria
+    if(novo_no == NULL)                                 ///verifica se o ponteiro recebeu null, traduzindo, não foi possivel alocar memoria, (o malloc vai informar isso)
+        return 0;                                       ///não conseguiu alocar memoria
 
-    novo_no->info = e;                                   ///o ponteiro que recebeu o endereço de memoria alocada vai salvar em info o valor inserido no parametro
+    novo_no->info = e;                                  ///o ponteiro que recebeu o endereço de memoria alocada vai salvar em info o valor inserido no parametro
     novo_no->prox = NULL;
 
-    if((*lista) == NULL){                                ///checa se a lista esta vazia, para inserir no primeiro elemento
-        *lista = novo_no;                                ///a lista vai apontar para o nó criado
-    } else {                                             ///se não estiver vazia
-        aux = *lista;                                    ///a lista auxiliar vai receber a lista passada como parametro
-        while(aux->prox != NULL){                        ///enquanto o nó que a auxiliar aponta não for nulo
-            aux = aux ->prox;                            ///a auxiliar vai apontar para o proximo nó que que ela aponta
+    if((*lista) == NULL){                               ///checa se a lista esta vazia, para inserir no primeiro elemento
+        *lista = novo_no;                               ///a lista vai apontar para o nó criado
+    } else {                                            ///se não estiver vazia
+        aux = *lista;                                   ///a lista auxiliar vai receber a lista passada como parametro
+        while(aux->prox != NULL){                       ///enquanto o nó que a auxiliar aponta não for nulo
+            aux = aux ->prox;                           ///a auxiliar vai apontar para o proximo nó que que ela aponta
         }
-        aux->prox = novo_no;                             ///por fim, quando chegar no ultimo nó, ele vai apontar para o nó criado
+        aux->prox = novo_no;                            ///por fim, quando chegar no ultimo nó, ele vai apontar para o nó criado
     }
     return 1;
 }
 
 int remover_inicio(tplista **lista, tp_item *e){        ///função para remover o primeiro nó da lista
-    if(lista == NULL)                                    ///checa se a lista existe
+    if(lista == NULL)                                   ///checa se a lista existe
         return 0;
-    if(lista_vazia(*lista))                              ///checa se a lista esta vazia
+    if(lista_vazia(*lista))                             ///checa se a lista esta vazia
         return 0;
 
-    tplista *no = *lista;                                ///cria-se um novo nó, que aponta para a lista
-    *e = no->info;                                       ///o valor que estiver neste nó vais er passado para o parametro 'e'
-    *lista = no->prox;                                   ///a lista vai apontar para o proximo nó que o novo nó aponta
-    free(no);                                            ///por fim o novo nó é liberado da memoria
+    tplista *no = *lista;                               ///cria-se um novo nó, que aponta para a lista
+    *e = no->info;                                      ///o valor que estiver neste nó vais er passado para o parametro 'e'
+    *lista = no->prox;                                  ///a lista vai apontar para o proximo nó que o novo nó aponta
+    free(no);                                           ///por fim o novo nó é liberado da memoria
     return 1;
 }
 
 int remover_meio(tplista **lista, tp_item *e){          ///função para remover um nó com um certo valor
-    if(lista == NULL)                                    ///checa se a lista existe
+    if(lista == NULL)                                   ///checa se a lista existe
         return 0;
-    if(lista_vazia(*lista))                              ///checa se a lista esta vazia
+    if(lista_vazia(*lista))                             ///checa se a lista esta vazia
         return 0;
-    tplista *ant, *novo_no = *lista;                     ///cria-se 2 ponteiros para percorrer a lista, o ponteiro 'novo_no' vai receber a lista
-    while(novo_no != NULL && novo_no->info != *e){       ///enquanto o novo_no não for nulo e o valor que estiver nele for diferente do valor passado como parametro
-        ant = novo_no;                                   ///o nó anterior vai receber o novo_no
-        novo_no = novo_no->prox;                         ///o novo_no vai apontar para o proximo nó que ele aponta
+    tplista *ant, *novo_no = *lista;                    ///cria-se 2 ponteiros para percorrer a lista, o ponteiro 'novo_no' vai receber a lista
+    while(novo_no != NULL && novo_no->info != *e){      ///enquanto o novo_no não for nulo e o valor que estiver nele for diferente do valor passado como parametro
+        ant = novo_no;                                  ///o nó anterior vai receber o novo_no
+        novo_no = novo_no->prox;                        ///o novo_no vai apontar para o proximo nó que ele aponta
     }
 
-    if(novo_no == NULL)                                  ///checa se o valor é nulo
-        return 0;                                        ///isto é, não foi encontrado
+    if(novo_no == NULL)                                 ///checa se o valor é nulo
+        return 0;                                       ///isto é, não foi encontrado
 
-    if(novo_no == *lista){                               ///se foi encontrado, ele checa se vai remover o primeiro
-        *lista = novo_no->prox;                          ///então a lista vai apontar para o proximo nó que o novo_no aponta
-    } else {                                             ///senão
-        ant->prox = novo_no->prox;                       ///o proximo nó que o nó anterior aponta vai apontar para o proximo nó que o novo_no aponta
+    if(novo_no == *lista){                              ///se foi encontrado, ele checa se vai remover o primeiro
+        *lista = novo_no->prox;                         ///então a lista vai apontar para o proximo nó que o novo_no aponta
+    } else {                                            ///senão
+        ant->prox = novo_no->prox;                      ///o proximo nó que o nó anterior aponta vai apontar para o proximo nó que o novo_no aponta
     }
-    free(novo_no);                                       ///por fim o novo_no que agora foi encontrado é liberado da memoria
+    free(novo_no);                                      ///por fim o novo_no que agora foi encontrado é liberado da memoria
     return 1;
 }
 
 int remover_final(tplista **lista, tp_item *e){         ///função para remover o ultimo nó da lista
-    if(lista == NULL)                                    ///checa se a lista existe
+    if(lista == NULL)                                   ///checa se a lista existe
         return 0;
-    if(lista_vazia(*lista))                              ///checa se a lista esta vazia
+    if(lista_vazia(*lista))                             ///checa se a lista esta vazia
         return 0;
 
-    tplista *ant, *novo_no = *lista;                     ///cria-se 2 ponteiros para percorrer a lista, o ponteiro 'novo_no' vai receber a lista
-    while(novo_no->prox != NULL){                        ///este laço vai percorrer toda a lista até que o proximo nó do novo_no seja nulo
-        ant = novo_no;                                   ///o potneiro anterior recebe o novo_no
-        novo_no = novo_no->prox;                         ///e o 'novo_no' vai apontar para o proximo nó que ele aponta
+    tplista *ant, *novo_no = *lista;                    ///cria-se 2 ponteiros para percorrer a lista, o ponteiro 'novo_no' vai receber a lista
+    while(novo_no->prox != NULL){                       ///este laço vai percorrer toda a lista até que o proximo nó do novo_no seja nulo
+        ant = novo_no;                                  ///o potneiro anterior recebe o novo_no
+        novo_no = novo_no->prox;                        ///e o 'novo_no' vai apontar para o proximo nó que ele aponta
     }
     *e = novo_no->info;
-    if(novo_no == (*lista)){                             ///se o novo_no for igual a lista(quer dizer que é o primeiro)
-        *lista = novo_no->prox;                          ///a lista vai apontar para o proximo nó que o novo_no aponta
-    } else {                                             ///senão
-        ant->prox = novo_no->prox;                       ///o proximo nó que que o anterior aponta, vai apontar para o proximo nó que o 'novo_no' aponta
+    if(novo_no == (*lista)){                            ///se o novo_no for igual a lista(quer dizer que é o primeiro)
+        *lista = novo_no->prox;                         ///a lista vai apontar para o proximo nó que o novo_no aponta
+    } else {                                            ///senão
+        ant->prox = novo_no->prox;                      ///o proximo nó que que o anterior aponta, vai apontar para o proximo nó que o 'novo_no' aponta
     }
-    free(novo_no);                                       ///por fim, o novo_no é liberado
+    free(novo_no);                                      ///por fim, o novo_no é liberado
     return 1;
 }
 
-int buscar_pelo_elemento(tplista **lista, tp_item *e){  ///esta função ira buscar por um nó na lista de ocordo com o valor que ele tiver
+int buscar_pelo_elemento(tplista **lista, tp_item e){   ///esta função ira buscar por um nó na lista de ocordo com o valor que ele tiver
+    if(lista == NULL)                                   ///checa se a lista existe ou esta vazia
+        return 0;
 
+    tplista *novo_no = *lista;                          ///cria-se um novo nó, recebendo a lista
+
+    while(novo_no != NULL && novo_no->info != e){       ///enquanto o novo_no não for nulo e o valor de info contido neste nó for diferente do parametro 'e'
+        novo_no = novo_no->prox;                        ///o novo_no vai apontar o proximo nó que ele aponta
+    }
+    if(novo_no == NULL)                                 ///se o novo_no for nulo
+        return 0;                                       ///quer dizer que nada foi encontrado
+    else{                                               ///senão
+        return 1;                                       ///retorna 1 informando que foi encontrado o dado
+    }
 }
 
 int buscar_pela_posicaoo(tplista **lista, int pos, tp_item *e){///esta função ira buscar por um nó na lista de ocordo com a posição dele na lista
-    if(lista == NULL || pos <= 0)                        ///checa se a lista existe
+    if(lista == NULL || pos <= 0)                       ///checa se a lista existe
         return 0;
-    if(lista_vazia(*lista))                              ///checa se a lista esta vazia
+    if(lista_vazia(*lista))                             ///checa se a lista esta vazia
         return 0;
-    tplista *novo_no = *lista;                           ///cria-se um novo no para recebendo a lista
-    int i = 1;                                           ///cria-se uma varivel intermediaria para filtrar as posições
-    while(novo_no != NULL && i < pos){                   ///enquanto o novo_no não for nulo e o valor de i for menor que o valor do paramentro pos
-        novo_no = novo_no->prox;                         ///o novo_no vai apontar o proximo nó que ele aponta
-        i++;                                             ///o 'i' incrementa
+    tplista *novo_no = *lista;                          ///cria-se um novo no para recebendo a lista
+    int i = 1;                                          ///cria-se uma varivel intermediaria para filtrar as posições
+    while(novo_no != NULL && i < pos){                  ///enquanto o novo_no não for nulo e o valor de i for menor que o valor do paramentro pos
+        novo_no = novo_no->prox;                        ///o novo_no vai apontar o proximo nó que ele aponta
+        i++;                                            ///o 'i' incrementa
     }
-    if(novo_no == NULL)                                  ///se o novo_no for nulo
-        return 0;                                        ///quer dizer que nada foi encontrado
-    else{                                                ///senão
-        *e = novo_no->info;                              ///o parametro 'e' vai receber o valor da info contida no nó encontrado
-        return 1;                                        ///retorna um informando que tudo ocorreu normal
+    if(novo_no == NULL)                                 ///se o novo_no for nulo
+        return 0;                                       ///quer dizer que nada foi encontrado
+    else{                                               ///senão
+        *e = novo_no->info;                             ///o parametro 'e' vai receber o valor da info contida no nó encontrado
+        return 1;                                       ///retorna um informando que tudo ocorreu normal
     }
 }
