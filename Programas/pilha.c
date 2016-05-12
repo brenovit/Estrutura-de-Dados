@@ -48,10 +48,10 @@ int main() {
     //menu_pilha();
     int i;
 
-    char notacao[] = "82/52*+2-";
+    char notacao[] = "84/53*+2-";
 
     e = notacao_polonesa(notacao);
-    printf("\nEquaÁ„o: %s\nResultado da Esquac„o: %.0f\n",notacao, e);
+    printf("\nEqua√ß√£o: %s\nResultado da Esquac√£o: %.0f\n",notacao, e);
 
     ///atividade 1
     /*for(i = 1; i < MAX; i++){
@@ -137,9 +137,9 @@ int main() {
     //*//*
     printf("\n\n");
     if(pilhas_iguais(pilha1,pilha2)){
-        printf("\n=============\nPilhas 1 e 2 s„o Iguais!\n=============\n");
+        printf("\n=============\nPilhas 1 e 2 s√£o Iguais!\n=============\n");
     } else {
-        printf("\n=============\nPilhas 1 e 2 s„o Diferentes!\n=============\n");
+        printf("\n=============\nPilhas 1 e 2 s√£o Diferentes!\n=============\n");
     }
     //*/
 }
@@ -161,23 +161,23 @@ void menu_pilha(){
 }
 
 void inicia_pilha(tp_pilha *p){         ///o ponteiro p aponta para um item na pilha(struct) -> o topo
-    p->topo = BASE;                     ///este topo recebe um valor base, isto È, n„o aponta para posiÁ„oa lguma da pilha = -1.
+    p->topo = BASE;                     ///este topo recebe um valor base, isto √©, n√£o aponta para posi√ß√£oa lguma da pilha = -1.
 }                                       ///Se o topo estiver valendo -1, quer dizer que a pilha esta vazia.
 
-int empilha(tp_pilha *p, tp_item e){    ///recebe como parametro uma pilha e o valor que ser· inserido
-    if (p->topo == MAX-1){              ///checa se o topo da pilha esta na ultima posiÁ„o, ou se a pilha esta cheia
+int empilha(tp_pilha *p, tp_item e){    ///recebe como parametro uma pilha e o valor que ser√° inserido
+    if (p->topo == MAX-1){              ///checa se o topo da pilha esta na ultima posi√ß√£o, ou se a pilha esta cheia
         printf("\t\t\tA PILHA DA CHEIA\n");
         return 0;                       ///retorna 0 para falso ou qualquer outro numero como verdadeiro = logica booleana
     }
-    p->topo++;                          ///o valor do topo da pilha vai incrementar, isto È, subir
-    p->item[p->topo] = e;               ///o item atual da pilha, na posiÁ„o que o topo se encontra, vai receber o valor do parametro 'e'
+    p->topo++;                          ///o valor do topo da pilha vai incrementar, isto √©, subir
+    p->item[p->topo] = e;               ///o item atual da pilha, na posi√ß√£o que o topo se encontra, vai receber o valor do parametro 'e'
     //printf("Empilhei o Valor [%d]!\n",e);
     return 1;                           ///retorna 1 para verdadeiro = logica booleana
 }
 
 int desempilha(tp_pilha *p, tp_item *e){
-    if (pilha_vazia(p)){                ///if(pilha_vazia(p)==1) - o 'p' de pilha vazia È o mesmo 'p' de tp_pilha entretanto ele esta recebendo o seu valor, um endereÁo de memoria
-        printf("\n\n\t\tN„o foi possÌvel remover um item da pilha!\n");
+    if (pilha_vazia(p)){                ///if(pilha_vazia(p)==1) - o 'p' de pilha vazia √© o mesmo 'p' de tp_pilha entretanto ele esta recebendo o seu valor, um endere√ßo de memoria
+        printf("\n\n\t\tN√£o foi poss√≠vel remover um item da pilha!\n");
         return 0;                       ///retorna 0 como falso
     } else {
         tp_item temp;                   ///cria uma variavel temporaria que vai
@@ -191,20 +191,20 @@ int desempilha(tp_pilha *p, tp_item *e){
 
 int verifica_topo(tp_pilha *p, tp_item *e){
     if(pilha_vazia(p)){
-        printf("\n\n\t\tN„o foi possivel verificar a pilha!\n");
+        printf("\n\n\t\tN√£o foi possivel verificar a pilha!\n");
         return 0;
-    } else {                            ///igual ao desempilha a diferenÁa que esse sÛ retorna o valor no topo.
+    } else {                            ///igual ao desempilha a diferen√ßa que esse s√≥ retorna o valor no topo.
         tp_item temp;                   ///cria uma variavel temporaria que vai
         temp = p->item[p->topo];        ///receber o valor do elemento no topo da pilha
         *e = temp;                      ///o valor da variavel que o ponteiro 'i' esta, vai receber o valor temporario - retorno
-        //printf("\nO Valor no topo da Pilha È: [%d]",*i);
+        //printf("\nO Valor no topo da Pilha √©: [%d]",*i);
         return 1;
     }
 }
 
 int retira_impar(tp_pilha *p){
-///1)	Implementar uma funÁ„o que receba uma pilha como par‚metro
-///     e retire todos os elementos Ìmpares dessa pilha. (Use uma pilha auxiliar).
+///1)	Implementar uma fun√ß√£o que receba uma pilha como par√¢metro
+///     e retire todos os elementos √≠mpares dessa pilha. (Use uma pilha auxiliar).
     tp_pilha pilhaAux;
     inicia_pilha(&pilhaAux);
     int e;
@@ -227,8 +227,8 @@ int retira_impar(tp_pilha *p){
 }
 
 int pilhas_iguais(tp_pilha p1,tp_pilha p2){
-///2)	Implementar uma funÁ„o que receba duas pilhas como par‚metro
-///     e retorna 1 caso sejam idÍnticas ou zero caso contr·rio.
+///2)	Implementar uma fun√ß√£o que receba duas pilhas como par√¢metro
+///     e retorna 1 caso sejam id√™nticas ou zero caso contr√°rio.
     tp_item e1, e2;
     int i;
 
@@ -251,8 +251,8 @@ int pilhas_iguais(tp_pilha p1,tp_pilha p2){
 }
 
 int junta_pilha(tp_pilha *p1, tp_pilha *p2){
-///3)	Implementar uma funÁ„o que receba duas pilhas como par‚metro
-///     e empilhe a segunda sobre a primeira. (Use uma pilha auxiliar, alÈm das duas pilhas em quest„o)
+///3)	Implementar uma fun√ß√£o que receba duas pilhas como par√¢metro
+///     e empilhe a segunda sobre a primeira. (Use uma pilha auxiliar, al√©m das duas pilhas em quest√£o)
     tp_item e;
     tp_pilha pilhaAux;
     inicia_pilha(&pilhaAux);
@@ -314,39 +314,36 @@ float notacao_polonesa(char ex[]){
     inicia_pilha(&pilha);
     for(i = 0; i < 9; i++){
         aux[0] = ex[i];
-        ///if(aux == '+')
-        if(strcmp(aux,"+") != 0 || strcmp(aux,"*") != 0 || strcmp(aux,"-") != 0 || strcmp(aux,"/") != 0){
-            if(isdigit(aux[0])){
-                numAux = strtof(aux,NULL);
-                empilha(&pilha, numAux);
-                //printf("\nEmpilhei: %.0f\n",numAux);
-            } else{
-                desempilha(&pilha, &num2);
-                desempilha(&pilha, &num1);
-                switch(aux[0]){
-                    case '+': calc = num1 + num2;
-                    //printf("\n%f + %f = &f",num1,num2,calc);
-                    break;
-                    case '-': calc = num1 - num2;
-                    //printf("\n%f - %f = &f",num1,num2,calc);
-                    break;
-                    case '*': calc = num1 * num2;
-                    //printf("\n%f * %f = &f",num1,num2,calc);
-                    break;
-                    case '/': calc = num1 / num2;
-                    //printf("\n%f / %f = &f",num1,num2,calc);
-                    break;
-                }
-                empilha(&pilha, calc);
+        if(isdigit(aux[0])){
+            numAux = strtof(aux,NULL);
+            empilha(&pilha, numAux);
+            //printf("\nEmpilhei: %.0f\n",numAux);
+        } else{
+            desempilha(&pilha, &num2);
+            desempilha(&pilha, &num1);
+            switch(aux[0]){
+                case '+': calc = num1 + num2;
+                //printf("\n%f + %f = &f",num1,num2,calc);
+                break;
+                case '-': calc = num1 - num2;
+                //printf("\n%f - %f = &f",num1,num2,calc);
+                break;
+                case '*': calc = num1 * num2;
+                //printf("\n%f * %f = &f",num1,num2,calc);
+                break;
+                case '/': calc = num1 / num2;
+                //printf("\n%f / %f = &f",num1,num2,calc);
+                break;
             }
-           // printf("\nPassei do Switch, calc = %f\n",calc);
+            empilha(&pilha, calc);
         }
+       // printf("\nPassei do Switch, calc = %f\n",calc);
     }
     desempilha(&pilha, &calc);
     return calc;
 }
 
-void configtela() {//funÁ„o que configura o tamanho da tela e do buffer
+void configtela() {//fun√ß√£o que configura o tamanho da tela e do buffer
     COORD outbuff;
     outbuff.X = 100; // tem que ser +1 que o tamanho X
     outbuff.Y = 40; // tem que ser +1 que o tamanho Y
